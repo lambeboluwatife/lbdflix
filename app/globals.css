@@ -40,6 +40,11 @@ header {
 
 header h1 {
   margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+header form {
+  margin-left: 4rem;
 }
 
 header input {
@@ -52,6 +57,7 @@ header input {
 
 ::placeholder {
   color: rgb(86, 86, 86);
+  font-size: 0.7rem;
 }
 
 .loader {
