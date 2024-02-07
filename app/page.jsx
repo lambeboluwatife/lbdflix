@@ -1,29 +1,23 @@
-"use client";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import Hero from "./components/Hero";
 
-const HomePage = () => {
-  const [heroData, setHeroData] = useState([]);
-  const [homeData, setHomeData] = useState({});
+async function fetchMovies() {
+  const response = await fetch(
+    "https://api.themoviedb.org/3/trending/movie/day?api_key=514318c6f6f673457a51ffcaf8158cf2"
+  );
 
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/trending/movie/day?api_key=514318c6f6f673457a51ffcaf8158cf2"
-      )
-      .then((response) => {
-        setHomeData(response.data.results);
-        setHeroData(response.data.results[0]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data from API", error);
-      });
-  }, []);
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait 1 second
+
+  const movies = await response.json();
+  return movies;
+}
+
+const HomePage = async () => {
+  const movies = await fetchMovies();
 
   return (
     <div>
-      <Hero heroData={heroData} />
+      <Hero movies={movies} />
     </div>
   );
 };
