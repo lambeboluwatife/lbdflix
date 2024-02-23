@@ -71,11 +71,19 @@ header input {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* event card */
@@ -120,6 +128,42 @@ header input {
 
 .trending h1 {
   font-size: 1rem;
+}
+
+.card img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.card h5 {
+  margin: 0;
+}
+
+.card-details {
+  margin-top: 0.1rem;
+  font-size: smaller;
+}
+
+.card-details span {
+  margin-right: 0.5rem;
+}
+
+.card span small.green {
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.card span small.red {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.card span small.orange {
+  border: 1px solid orange;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .loader {
