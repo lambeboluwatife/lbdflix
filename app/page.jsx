@@ -1,6 +1,7 @@
 // "use client";
 // import { useState, useEffect } from "react";
 import Hero from "./components/Hero";
+import InTheatres from "./components/InTheatres";
 import SubHero from "./components/SubHero";
 import Trending from "./components/Trending";
 
@@ -61,6 +62,7 @@ const HomePage = async () => {
       <Hero movies={movies} />
       <SubHero movies={movies} />
       <Trending />
+      <InTheatres />
     </div>
   );
 };
