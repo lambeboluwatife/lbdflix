@@ -122,11 +122,13 @@ header input {
   font-size: x-small;
 }
 
-.trending {
+.trending,
+.theatres {
   margin-top: 2rem;
 }
 
-.trending h1 {
+.trending h1,
+.theatres h1 {
   font-size: 1rem;
 }
 
@@ -148,22 +150,21 @@ header input {
   margin-right: 0.5rem;
 }
 
-.card span small.green {
+.card span .rating {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.card span .rating.green {
   border: 1px solid green;
-  border-radius: 5px;
-  padding: 5px;
 }
 
-.card span small.red {
+.card span .rating.red {
   border: 1px solid red;
-  border-radius: 5px;
-  padding: 5px;
 }
 
-.card span small.orange {
+.card span .rating.orange {
   border: 1px solid orange;
-  border-radius: 5px;
-  padding: 5px;
 }
 
 .loader {
