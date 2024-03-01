@@ -1,4 +1,6 @@
+import Link from "next/link";
 import MovieList from "./MovieList";
+import Button from "./Button";
 
 async function fetchTrendingMovies() {
   const response = await fetch(
@@ -10,11 +12,16 @@ async function fetchTrendingMovies() {
 
 const InTheatres = async () => {
   const moviesResponse = await fetchTrendingMovies();
+  const movies = moviesResponse.results.slice(0, 6);
+
   return (
     <div className="theatres">
       <div className="container">
         <h1>🎞️ In Theatre</h1>
-        <MovieList moviesResponse={moviesResponse} />
+        <MovieList movies={movies} />
+        <Link href="/in-theatres">
+          <Button text="See More..." />
+        </Link>
       </div>
     </div>
   );

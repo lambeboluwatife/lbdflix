@@ -2,19 +2,48 @@
   --primary-color: #0070f3;
 }
 
-html,
-body {
-  margin: 0;
+.nav {
+  color: #fff;
   padding: 0;
-  font-size: 16px;
-  background-color: #333;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
   color: #fff;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
+header h1 {
+  font-size: 1.5rem;
+}
+
+header input {
+  background: transparent;
+  border: 1.5px solid rgb(86, 86, 86);
+  padding: 0.5rem;
+  color: #fff;
+  border-radius: 10px;
+}
+
+header form {
+  margin-right: 5rem;
+}
+
+::placeholder {
+  color: rgb(86, 86, 86);
+  font-size: 0.7rem;
 }
 
 .hero-section {
@@ -29,65 +58,17 @@ body {
   z-index: 1;
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  margin-left: 2rem;
-  font-size: 1.5rem;
-}
-
-header form {
-  margin-left: 4rem;
-}
-
-header input {
-  background: transparent;
-  border: 1.5px solid rgb(86, 86, 86);
-  padding: 0.5rem;
-  color: #fff;
-  border-radius: 10px;
-}
-
-::placeholder {
-  color: rgb(86, 86, 86);
-  font-size: 0.7rem;
-}
-
 .sub-hero {
   margin-top: 1rem;
 }
 
-.events {
+.sub-hero-cards {
   padding: 10px;
-  height: 8rem;
+  height: 10rem;
+  overflow: hidden;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.grid-5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.grid-6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-/* event card */
-.event-item {
+.sub-hero-card-item {
   height: 100%;
   width: 100%;
   color: #fff;
@@ -97,8 +78,7 @@ header input {
   cursor: pointer;
 }
 
-/* background image */
-.event__image {
+.sub-hero-card__image {
   position: absolute;
   display: inline-block;
   width: 100%;
@@ -106,17 +86,16 @@ header input {
   border-radius: 10px;
 }
 
-/* event foreground */
-.event__content {
+.sub-hero-card__content {
   position: relative;
   height: 100%;
   display: inline-block;
   padding: var(--tiny);
   z-index: 2;
-  top: 70%;
+  top: 80%;
 }
 
-.event__content--title {
+.sub-hero-card__content--title {
   color: #fff;
   padding: 5px;
   font-size: x-small;
@@ -130,6 +109,11 @@ header input {
 .trending h1,
 .theatres h1 {
   font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cards {
+  margin-bottom: 1rem;
 }
 
 .card img {
@@ -153,18 +137,45 @@ header input {
 .card span .rating {
   border-radius: 5px;
   padding: 5px;
+  font-size: xx-small;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .card span .rating.green {
-  border: 1px solid green;
+  background-color: green;
+}
+
+.card span .rating.green:hover {
+  border: 1.5px solid green;
+  background-color: transparent;
 }
 
 .card span .rating.red {
-  border: 1px solid red;
+  background-color: red;
+}
+
+.card span .rating.red:hover {
+  border: 1.5px solid red;
+  background-color: transparent;
 }
 
 .card span .rating.orange {
-  border: 1px solid orange;
+  background-color: orange;
+}
+
+.card span .rating.orange:hover {
+  border: 1.5px solid orange;
+  background-color: transparent;
+}
+
+.all-trending {
+  margin-top: 2rem;
+}
+
+.all-trending h1 {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .loader {
@@ -176,7 +187,7 @@ header input {
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: blue;
+  border-left-color: #0070f3;
   border-radius: 50%;
   width: 40px;
   height: 40px;
