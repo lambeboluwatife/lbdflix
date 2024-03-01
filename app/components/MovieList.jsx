@@ -1,7 +1,6 @@
 import moment from "moment";
 
-const MovieList = ({ moviesResponse }) => {
-  const movies = moviesResponse.results.slice(0, 6);
+const MovieList = ({ movies }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
   function getClassByRate(vote) {
@@ -16,7 +15,7 @@ const MovieList = ({ moviesResponse }) => {
   return (
     <div className="cards">
       <div className="grid grid-6">
-        {movies.map((movie) => (
+        {movies?.map((movie) => (
           <div className="card" key={movie.id}>
             <img
               src={`${IMG_PATH}${movie.poster_path}`}

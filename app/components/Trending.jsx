@@ -1,4 +1,6 @@
+import Button from "./Button";
 import MovieList from "./MovieList";
+import Link from "next/link";
 
 async function fetchTrendingMovies() {
   const response = await fetch(
@@ -8,16 +10,18 @@ async function fetchTrendingMovies() {
   return movies;
 }
 
-// https://api.themoviedb.org/3/movie/now_playing?api_key=514318c6f6f673457a51ffcaf8158cf2
-
 const Trending = async () => {
   const moviesResponse = await fetchTrendingMovies();
+  const movies = moviesResponse.results.slice(0, 6);
 
   return (
     <div className="trending">
       <div className="container">
         <h1>&#128293;Trending All Week</h1>
-        <MovieList moviesResponse={moviesResponse} />
+        <MovieList movies={movies} />
+        <Link href="/trending">
+          <Button text="See More..." />
+        </Link>
       </div>
     </div>
   );
