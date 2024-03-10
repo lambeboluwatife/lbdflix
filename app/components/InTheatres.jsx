@@ -4,7 +4,7 @@ import Button from "./Button";
 
 async function fetchTrendingMovies() {
   const response = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=514318c6f6f673457a51ffcaf8158cf2"
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=acd2e2d961bd794fcc2ffc03671385e8"
   );
   const movies = await response.json();
   return movies;
