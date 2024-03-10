@@ -1,4 +1,5 @@
 import moment from "moment";
+import Link from "next/link";
 
 const MovieList = ({ movies }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -17,11 +18,14 @@ const MovieList = ({ movies }) => {
       <div className="grid grid-6">
         {movies?.map((movie) => (
           <div className="card" key={movie.id}>
-            <img
-              src={`${IMG_PATH}${movie.poster_path}`}
-              alt=""
-              className="card-image"
-            />
+            <Link href={`/movies/details/${movie.id}`}>
+              {" "}
+              <img
+                src={`${IMG_PATH}${movie.poster_path}`}
+                alt=""
+                className="card-image"
+              />
+            </Link>
             <h5>
               {" "}
               {movie.title.length > 15
@@ -31,7 +35,7 @@ const MovieList = ({ movies }) => {
             <div className="card-details">
               <span>
                 <small className="release-date">
-                  {moment(movie.release_date).format("MMM D")}
+                  {moment(movie.release_date).format("MMM D, YY")}
                 </small>
               </span>
               <span>

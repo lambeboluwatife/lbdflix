@@ -47,7 +47,7 @@ header form {
 }
 
 .hero-section {
-  height: 80vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -56,10 +56,16 @@ header form {
   color: #fff;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .sub-hero {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  position: absolute;
+  z-index: 5;
+  bottom: 5%;
+  width: 95vw;
+  overflow: hidden;
 }
 
 .sub-hero-cards {
@@ -119,6 +125,7 @@ header form {
 .card img {
   width: 80%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .card h5 {
@@ -176,6 +183,32 @@ header form {
 .all-trending h1 {
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.movie-details {
+  margin-top: 3rem;
+}
+
+.movie-info {
+  line-height: 1;
+}
+
+.movie-details h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.movie-details .genres {
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.movie-details span {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-right: 0.5rem;
+  font-size: small;
 }
 
 .loader {
