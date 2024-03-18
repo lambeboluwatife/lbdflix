@@ -9,7 +9,9 @@ const Hero = ({ heroMovie }) => {
       }}
     >
       <div className="showcase">
-        <h1>{heroMovie.title}</h1>
+        <div className="container">
+          <h1>{heroMovie.title}</h1>
+        </div>
       </div>
     </div>
   );
