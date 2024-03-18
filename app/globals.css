@@ -59,6 +59,10 @@ header form {
   overflow: hidden;
 }
 
+.showcase h1 {
+  font-size: 5rem;
+}
+
 .sub-hero {
   margin-top: 2rem;
   position: absolute;
@@ -199,7 +203,6 @@ header form {
 }
 
 .movie-details .genres {
-  overflow: hidden;
   margin-top: 1rem;
 }
 
@@ -209,6 +212,60 @@ header form {
   padding: 2px 5px;
   margin-right: 0.5rem;
   font-size: small;
+}
+
+.production-info {
+  margin-top: 1rem;
+}
+
+.production-card {
+  border: 1px solid #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.production-card h6 {
+  color: #0070f3;
+}
+
+.overview {
+  margin-top: 2rem;
+}
+
+.overview .grid {
+  align-items: unset;
+}
+
+.overview h4 {
+  color: #0070f3;
+}
+
+.description p {
+  margin-top: 0.5rem;
+  font-size: small;
+  text-align: justify;
+}
+
+.movie-details-review {
+  background-color: #0070f3;
+  margin: 0.5rem 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.author {
+  height: 4em;
+  width: 20em;
+  background: #000;
+  cursor: pointer;
+}
+
+.review-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .loader {
