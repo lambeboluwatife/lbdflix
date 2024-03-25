@@ -1,6 +1,6 @@
 import moment from "moment";
 import Hero from "./Hero";
-import MovieReview from "./MovieReview";
+import MovieReviews from "./MovieReviews";
 
 async function fetchMovie(id) {
   const response = await fetch(
@@ -20,8 +20,10 @@ async function fetchMovieReviews(id) {
 
 const MovieDetails = async ({ id }) => {
   const movie = await fetchMovie(id);
+  console.log(movie);
   const reviews = await fetchMovieReviews(id);
-  console.log(reviews.results);
+  // console.log(reviews);
+  // console.log(reviews.results);
 
   function getGenres(genres) {
     const g = genres.map((genre) => genre.name);
@@ -83,7 +85,11 @@ const MovieDetails = async ({ id }) => {
               </div>
               <div className="hype">
                 <h4>Reviews</h4>
-                <MovieReview reviews={reviews.results} />
+                {reviews.results.length === 0 ? (
+                  "No Reviews For This Movie"
+                ) : (
+                  <MovieReviews reviews={reviews.results} />
+                )}
               </div>
             </div>
           </div>
