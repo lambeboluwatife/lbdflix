@@ -247,6 +247,11 @@ header form {
   text-align: justify;
 }
 
+.movie-details-reviews a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .movie-details-review {
   background-color: #0070f3;
   margin: 0.5rem 0;
@@ -255,11 +260,33 @@ header form {
   justify-content: space-between;
 }
 
-.author {
-  height: 4em;
-  width: 20em;
+.movie-details-review .author {
+  height: 5rem;
+  width: 5rem;
   background: #000;
   cursor: pointer;
+}
+
+.movie-details-review .author {
+  font-size: xx-small;
+}
+
+.movie-details-review .content {
+  margin-left: 1rem;
+}
+
+.movie-details-review .footer {
+  line-height: 1.5;
+  margin-top: 1rem;
+  float: right;
+}
+
+.movie-details-review .footer .username {
+  font-style: italic;
+}
+
+.movie-details-review .footer .date {
+  font-size: xx-small;
 }
 
 .review-image {
