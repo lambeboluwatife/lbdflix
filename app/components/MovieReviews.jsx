@@ -4,6 +4,14 @@ import Link from "next/link";
 const MovieReviews = ({ reviews }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
+  function showAvatar(avatarFromApi) {
+    if (!avatarFromApi) {
+      return "https://t3.ftcdn.net/jpg/01/26/91/78/360_F_126917812_XlWgkaV9f81Hde4wvmvJWM3huJRvy5EM.webp";
+    } else {
+      return IMG_PATH + avatarFromApi;
+    }
+  }
+
   return (
     <div>
       <div className="movie-details-reviews">
@@ -13,7 +21,7 @@ const MovieReviews = ({ reviews }) => {
               <div className="author">
                 <img
                   className="review-image"
-                  src={`${IMG_PATH}${review.author_details.avatar_path}`}
+                  src={showAvatar(review.author_details.avatar_path)}
                   alt={`${
                     review.author_details.username ||
                     review.author ||
