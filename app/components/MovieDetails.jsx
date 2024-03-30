@@ -1,6 +1,9 @@
 import moment from "moment";
 import Hero from "./Hero";
 import MovieReviews from "./MovieReviews";
+import YoutubePlayer from "./YoutubePlayer";
+
+// https://api.themoviedb.org/3/collection/1196403?api_key=acd2e2d961bd794fcc2ffc03671385e8
 
 async function fetchMovie(id) {
   const response = await fetch(
@@ -18,12 +21,23 @@ async function fetchMovieReviews(id) {
   return reviews;
 }
 
+async function fetchMovieVideos(id) {
+  const response = await fetch(`
+  https://api.themoviedb.org/3/movie/${id}/videos?api_key=acd2e2d961bd794fcc2ffc03671385e8`);
+  const videos = await response.json();
+  return videos;
+}
+
 const MovieDetails = async ({ id }) => {
   const movie = await fetchMovie(id);
-  console.log(movie);
   const reviews = await fetchMovieReviews(id);
-  // console.log(reviews);
-  // console.log(reviews.results);
+  const videos = await fetchMovieVideos(id);
+  console.log(videos);
+
+  const trailer = videos.results.filter(
+    (video) => video.name === "Official Trailer"
+  );
+  console.log(trailer);
 
   function getGenres(genres) {
     const g = genres.map((genre) => genre.name);
@@ -82,8 +96,9 @@ const MovieDetails = async ({ id }) => {
               <div className="description">
                 <h4>DESCRIPTION</h4>
                 <p>{movie.overview}</p>
+                <YoutubePlayer videoId={trailer.key} />
               </div>
-              <div className="hype">
+              <div className="reviews">
                 <h4>Reviews</h4>
                 {reviews.results.length === 0 ? (
                   "No Reviews For This Movie"
