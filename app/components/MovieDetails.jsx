@@ -1,7 +1,8 @@
+"use client";
 import moment from "moment";
 import Hero from "./Hero";
 import MovieReviews from "./MovieReviews";
-import YoutubePlayer from "./YoutubePlayer";
+import ReactPlayer from "react-player/lazy";
 
 // https://api.themoviedb.org/3/collection/1196403?api_key=acd2e2d961bd794fcc2ffc03671385e8
 
@@ -32,12 +33,11 @@ const MovieDetails = async ({ id }) => {
   const movie = await fetchMovie(id);
   const reviews = await fetchMovieReviews(id);
   const videos = await fetchMovieVideos(id);
-  console.log(videos);
 
   const trailer = videos.results.filter(
     (video) => video.name === "Official Trailer"
   );
-  console.log(trailer);
+  console.log(trailer[0].key);
 
   function getGenres(genres) {
     const g = genres.map((genre) => genre.name);
@@ -52,6 +52,8 @@ const MovieDetails = async ({ id }) => {
       return number.toPrecision(3);
     }
   }
+
+  const youtubeUrl = `https://www.youtube.com/watch?v=${trailer[0].key}`;
 
   return (
     <div>
@@ -96,7 +98,7 @@ const MovieDetails = async ({ id }) => {
               <div className="description">
                 <h4>DESCRIPTION</h4>
                 <p>{movie.overview}</p>
-                <YoutubePlayer videoId={trailer.key} />
+                <ReactPlayer url={youtubeUrl} controls />
               </div>
               <div className="reviews">
                 <h4>Reviews</h4>
