@@ -12,10 +12,12 @@ const MovieReviews = ({ reviews }) => {
     }
   }
 
+  const firstFiveReviews = reviews.slice(0, 5);
+
   return (
     <div>
       <div className="movie-details-reviews">
-        {reviews.map((review) => (
+        {firstFiveReviews.map((review) => (
           <Link href={`/reviews/${review.id}`} key={review.id}>
             <div className="movie-details-review">
               <div className="author">
