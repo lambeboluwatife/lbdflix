@@ -242,9 +242,30 @@ header form {
 }
 
 .description p {
-  margin-top: 0.5rem;
+  margin: 0.5rem 0 1rem;
   font-size: small;
   text-align: justify;
+}
+
+.description a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #0070f3;
+  border: 1px solid #0070f3;
+  cursor: pointer;
+  font-size: small;
+  padding: 10px;
+}
+
+.description a:hover {
+  color: #0070f3;
+  background: transparent;
+}
+
+.trailer {
+  color: #0070f3;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
 }
 
 .movie-details-reviews a {
@@ -293,6 +314,14 @@ header form {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.collection {
+  margin-top: 1rem;
+}
+
+.collection h6 {
+  margin-bottom: 0.5rem;
 }
 
 .loader {

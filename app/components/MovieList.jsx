@@ -22,7 +22,7 @@ const MovieList = ({ movies }) => {
               {" "}
               <img
                 src={`${IMG_PATH}${movie.poster_path}`}
-                alt=""
+                alt={`${movie.title} Poster`}
                 className="card-image"
               />
             </Link>

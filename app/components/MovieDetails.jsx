@@ -3,6 +3,8 @@ import moment from "moment";
 import Hero from "./Hero";
 import MovieReviews from "./MovieReviews";
 import ReactPlayer from "react-player/lazy";
+import Link from "next/link";
+import Collection from "./Collection";
 
 // https://api.themoviedb.org/3/collection/1196403?api_key=acd2e2d961bd794fcc2ffc03671385e8
 
@@ -37,7 +39,6 @@ const MovieDetails = async ({ id }) => {
   const trailer = videos.results.filter(
     (video) => video.name === "Official Trailer"
   );
-  console.log(trailer[0].key);
 
   function getGenres(genres) {
     const g = genres.map((genre) => genre.name);
@@ -98,7 +99,13 @@ const MovieDetails = async ({ id }) => {
               <div className="description">
                 <h4>DESCRIPTION</h4>
                 <p>{movie.overview}</p>
-                <ReactPlayer url={youtubeUrl} controls />
+                <Link href={movie.homepage} target="_blank">
+                  Movie Webpage
+                </Link>
+                <div className="trailer">
+                  <h5>Trailer</h5>
+                  <ReactPlayer url={youtubeUrl} controls />
+                </div>
               </div>
               <div className="reviews">
                 <h4>Reviews</h4>
@@ -110,6 +117,9 @@ const MovieDetails = async ({ id }) => {
               </div>
             </div>
           </div>
+          {movie.belongs_to_collection && (
+            <Collection id={movie.belongs_to_collection.id} />
+          )}
         </div>
       </div>
     </div>
