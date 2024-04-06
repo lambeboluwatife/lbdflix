@@ -6,8 +6,6 @@ import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 import Collection from "./Collection";
 
-// https://api.themoviedb.org/3/collection/1196403?api_key=acd2e2d961bd794fcc2ffc03671385e8
-
 async function fetchMovie(id) {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=acd2e2d961bd794fcc2ffc03671385e8`
@@ -33,16 +31,21 @@ async function fetchMovieVideos(id) {
 
 const MovieDetails = async ({ id }) => {
   const movie = await fetchMovie(id);
+  console.log(movie);
   const reviews = await fetchMovieReviews(id);
   const videos = await fetchMovieVideos(id);
+  console.log(videos);
 
   const trailer = videos.results.filter(
-    (video) => video.name === "Official Trailer"
+    (video) =>
+      video.name === "Official Trailer" ||
+      video.name === "Official Trailer #1" ||
+      video.name === "Official Trailer #2" ||
+      video.name === "Official Trailer #3"
   );
 
   function getGenres(genres) {
-    const g = genres.map((genre) => genre.name);
-    return g;
+    return genres.map((genre) => genre.name);
   }
 
   function roundToMillions(number) {
