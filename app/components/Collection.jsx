@@ -12,7 +12,6 @@ const Collection = async ({ id }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
   const collection = await fetchCollection(id);
-  console.log(collection);
   return (
     <div className="collection">
       <h3>{collection.name}</h3>
