@@ -13,7 +13,7 @@ This repository concerns the LBDflix [website](https://lbdflix.vercel.app/). Vis
 
 ## Want to contribute?
 
-Are a community member or not, we would love your input! Feel free to first check out our **code of conduct** and **contribution page** for any missing steps.
+Are a community member or not, we would love your input! Feel free to first check out our [code of conduct](https://github.com/lambeboluwatife/lbdflix/blob/main/CODE_OF_CONDUCT.md) and also the [contribution guidelines](https://github.com/lambeboluwatife/lbdflix/blob/main/CONTRIBUTING.md) for any missing steps.
 
 ### For Contributors
 
@@ -64,3 +64,7 @@ Join the amazing [LBDflix Community](https://discord.gg/Smg7gtd3eR) on discord t
 This repository is under the [MIT](./LICENSE) license.
 
 Please leave a star ⭐️ All support is highly appreciated.
+
+---
+
+**Reference:** [4c Community Readme] (https://github.com/FrancescoXX/4c-site/blob/main/README.md)
