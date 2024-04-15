@@ -53,6 +53,8 @@
 - [Live URL](https://lbdflix.vercel.app/)
 - [GitHub Repository](https://github.com/lambeboluwatife/lbdflix)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Join Us
 <p id="join-us"></p>
 
