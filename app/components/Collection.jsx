@@ -1,8 +1,9 @@
 import MovieList from "./MovieList";
+const apiKey = process.env.MOVIE_API;
 
 async function fetchCollection(id) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/collection/${id}?api_key=acd2e2d961bd794fcc2ffc03671385e8`
+    `https://api.themoviedb.org/3/collection/${id}?api_key=${apiKey}`
   );
   const collection = await response.json();
   return collection;

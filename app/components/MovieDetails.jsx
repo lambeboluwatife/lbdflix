@@ -6,9 +6,12 @@ import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 import Collection from "./Collection";
 
+const apiKey = process.env.MOVIE_API;
+
+
 async function fetchMovie(id) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=acd2e2d961bd794fcc2ffc03671385e8`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
   );
   const movie = await response.json();
   return movie;
@@ -16,7 +19,7 @@ async function fetchMovie(id) {
 
 async function fetchMovieReviews(id) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=acd2e2d961bd794fcc2ffc03671385e8`
+    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${apiKey}`
   );
   const reviews = await response.json();
   return reviews;
@@ -24,7 +27,7 @@ async function fetchMovieReviews(id) {
 
 async function fetchMovieVideos(id) {
   const response = await fetch(`
-  https://api.themoviedb.org/3/movie/${id}/videos?api_key=acd2e2d961bd794fcc2ffc03671385e8`);
+  https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`);
   const videos = await response.json();
   return videos;
 }
