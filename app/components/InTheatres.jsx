@@ -1,10 +1,11 @@
 import Link from "next/link";
 import MovieList from "./MovieList";
 import Button from "./Button";
+const apiKey = process.env.MOVIE_API;
 
 async function fetchTrendingMovies() {
   const response = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=acd2e2d961bd794fcc2ffc03671385e8"
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
   );
   const movies = await response.json();
   return movies;
