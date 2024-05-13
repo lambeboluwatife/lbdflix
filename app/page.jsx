@@ -3,7 +3,7 @@ import InTheatres from "./components/InTheatres";
 import SubHero from "./components/SubHero";
 import Trending from "./components/Trending";
 
-const apiKey = process.env.MOVIE_API;
+const apiKey = process.env.API_KEY;
 
 async function fetchMovies() {
   const response = await fetch(
