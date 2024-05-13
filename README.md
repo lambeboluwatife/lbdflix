@@ -88,6 +88,8 @@ Join our wonderful community on [Discord](https://discord.gg/Smg7gtd3eR)
 
 1. Get a free API Key at [The Movie Database](https://developer.themoviedb.org). Learn about the API [here](https://developer.themoviedb.org/reference/intro/getting-started)
 
+1. If you do not know how to get your API Key, an article on [How to Get Your TMDB API Key for LDBflix Contribution](https://dev.to/codexive_zech/streamlining-your-contribution-how-to-get-your-tmdb-api-key-for-ldbflix-contribution-52gf) is available.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Want to contribute?
