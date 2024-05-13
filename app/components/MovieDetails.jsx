@@ -6,12 +6,11 @@ import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 import Collection from "./Collection";
 
-const apiKey = process.env.MOVIE_API;
-
+const apiKey = process.env.API_KEY;
 
 async function fetchMovie(id) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=11bd951fd952fd303e32b0accd42087f`
   );
   const movie = await response.json();
   return movie;
@@ -19,7 +18,7 @@ async function fetchMovie(id) {
 
 async function fetchMovieReviews(id) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${apiKey}`
+    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=11bd951fd952fd303e32b0accd42087f`
   );
   const reviews = await response.json();
   return reviews;
@@ -27,24 +26,18 @@ async function fetchMovieReviews(id) {
 
 async function fetchMovieVideos(id) {
   const response = await fetch(`
-  https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`);
+  https://api.themoviedb.org/3/movie/${id}/videos?api_key=11bd951fd952fd303e32b0accd42087f`);
   const videos = await response.json();
   return videos;
 }
 
 const MovieDetails = async ({ id }) => {
   const movie = await fetchMovie(id);
-  console.log(movie);
   const reviews = await fetchMovieReviews(id);
   const videos = await fetchMovieVideos(id);
-  console.log(videos);
 
-  const trailer = videos.results.filter(
-    (video) =>
-      video.name === "Official Trailer" ||
-      video.name === "Official Trailer #1" ||
-      video.name === "Official Trailer #2" ||
-      video.name === "Official Trailer #3"
+  const trailer = videos.results.filter((video) =>
+    video.name.includes("Official Trailer")
   );
 
   function getGenres(genres) {
