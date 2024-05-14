@@ -11,7 +11,10 @@ const poppins = Poppins({
 export const metadata = {
   title: "LBDFlix",
   description:
-    "Discover the ultimate movie experience with our app! Explore a vast library of films, from classics to the latest blockbusters.",
+    "LBDflix is an dynamic movie application that gives a variety of movies, movies details, and trailers. It is packed movies collections for every movie lover and it also recommend movies to users.",
+  keywords:
+    "avatar, action, comedy, drama, mystery, horror, romance, movies, movie, trailer, rebel moon, zack synder, watch, stream, download, reviews, cast, US, free",
+    author: "Lambe Boluwatife"
 };
 
 export default function RootLayout({ children }) {
