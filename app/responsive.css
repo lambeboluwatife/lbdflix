@@ -1,0 +1,53 @@
+/* Tablets and under */
+@media all and (max-width: 768px) {
+  .sub-hero-cards .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sub-hero-card-item:nth-last-child(-n + 2) {
+    display: none;
+  }
+
+  .trending h1,
+  .theatres h1 {
+    font-size: 1.5rem;
+  }
+
+  .trending .grid,
+  .theatres .grid,
+  .collection .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .all-trending .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .production-card h2 {
+    font-size: 1rem;
+  }
+
+  .overview .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trailer h5 {
+    margin-bottom: 0.5rem;
+  }
+
+  .react-player {
+    width: 100vw;
+  }
+}
+
+/* Mobile */
+@media all and (max-width: 500px) {
+}
+
+/* Mobile */
+@media all and (max-width: 400px) {
+}
+
+/* Mobile */
+@media all and (max-width: 320px) {
+}
