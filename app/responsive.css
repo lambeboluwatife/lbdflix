@@ -31,17 +31,83 @@
     grid-template-columns: 1fr;
   }
 
-  .trailer h5 {
-    margin-bottom: 0.5rem;
-  }
-
-  .react-player {
-    width: 100vw;
+  .collection h6 {
+    margin: 0.5rem 0;
+    text-align: justify;
   }
 }
 
 /* Mobile */
 @media all and (max-width: 500px) {
+  header {
+    padding: 15px 0;
+    align-items: start;
+  }
+
+  .sub-hero-cards {
+    display: none;
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .trending h1,
+  .theatres h1 {
+    font-size: 1rem;
+  }
+
+  .trending .grid,
+  .theatres .grid,
+  .collection .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .all-trending .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movie-info h1 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .production-info .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .production-card {
+    padding: 15px;
+  }
+
+  .production-card h6 {
+    font-size: 0.5rem;
+  }
+
+  .production-card h2 {
+    font-size: 0.5rem;
+  }
+
+  .overview {
+    margin-top: 1rem;
+  }
+
+  .overview .grid {
+    align-items: center;
+  }
+
+  .overview .description {
+    width: 100vw;
+    padding: 20px;
+  }
+
+  .overview .reviews {
+    padding: 20px;
+  }
+
+  .trailer h5 {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Mobile */
@@ -50,4 +116,13 @@
 
 /* Mobile */
 @media all and (max-width: 320px) {
+  .trending .grid,
+  .theatres .grid,
+  .collection .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all-trending .grid {
+    grid-template-columns: 1fr;
+  }
 }

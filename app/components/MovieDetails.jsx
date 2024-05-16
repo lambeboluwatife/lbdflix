@@ -105,6 +105,7 @@ const MovieDetails = async ({ id }) => {
                   <h5>Trailer</h5>
                   <ReactPlayer
                     className="react-player"
+                    width="100%"
                     url={youtubeUrl}
                     controls
                   />
