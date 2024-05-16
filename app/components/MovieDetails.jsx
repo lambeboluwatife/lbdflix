@@ -103,7 +103,11 @@ const MovieDetails = async ({ id }) => {
                 </Link>
                 <div className="trailer">
                   <h5>Trailer</h5>
-                  <ReactPlayer url={youtubeUrl} controls />
+                  <ReactPlayer
+                    className="react-player"
+                    url={youtubeUrl}
+                    controls
+                  />
                 </div>
               </div>
               <div className="reviews">
