@@ -26,6 +26,10 @@ footer {
   border-top: 1.5px solid rgb(86, 86, 86);
 }
 
+footer a {
+  text-decoration: none;
+}
+
 footer a h3 {
   font-size: 1rem;
   color: #fff;
