@@ -1,0 +1,393 @@
+// No need for root, with sass you can a color one variable name using '$var' and use it throughout your styles.
+  
+  .nav {
+    color: #fff;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+  }
+  
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+// This is called nesting in sass, cool right!
+  footer {
+    padding: 20px 40px;
+    margin-top: 30px;
+    border-top: 1.5px solid $brown;
+
+     a {
+        text-decoration: none;
+      }
+      
+      a h3 {
+        font-size: 1rem;
+        color: #fff;
+      }
+      
+       h3 {
+        text-align: center;
+      }
+      
+       .github_link {
+        margin-top: 30px;
+      }
+      
+       .github_link a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      
+       .links_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  }
+  
+  
+  
+  header a,
+  footer #home_link {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  header h1,
+  footer #home_link h2 {
+    font-size: 1.5rem;
+  }
+  
+  header {
+    input {
+        background: transparent;
+        border: 1.5px solid $brown;
+        padding: 0.5rem;
+        color: #fff;
+        border-radius: 10px;
+      }
+      
+        form {
+        margin-right: 5rem;
+      }
+  }
+ 
+  
+  ::placeholder {
+    color: $brown;
+    font-size: 0.7rem;
+  }
+  
+  .hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .showcase h1 {
+    font-size: 5rem;
+  }
+  
+  .sub-hero {
+    margin-top: 2rem;
+    position: absolute;
+    z-index: 5;
+    bottom: 5%;
+    width: 95vw;
+    overflow: hidden;
+  }
+  
+  .sub-hero-cards {
+    padding: 10px;
+    height: 10rem;
+    overflow: hidden;
+  }
+  
+  .sub-hero-card-item {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .sub-hero-card__image {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .sub-hero-card__content {
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    padding: var(--tiny);
+    z-index: 2;
+    top: 80%;
+  }
+  
+  .sub-hero-card__content--title {
+    color: #fff;
+    padding: 5px;
+    font-size: x-small;
+  }
+  
+  .trending,
+  .theatres {
+    margin-top: 2rem;
+  }
+  
+  .trending h1,
+  .theatres h1 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cards {
+    margin-bottom: 1rem;
+  }
+  
+  .card img {
+    width: 80%;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .card h5 {
+    margin: 0;
+  }
+  
+  .card-details {
+    margin-top: 0.1rem;
+    font-size: smaller;
+  }
+  
+  .card-details span {
+    margin-right: 0.5rem;
+  }
+  
+  .card span .rating {
+    border-radius: 5px;
+    padding: 5px;
+    font-size: xx-small;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .card span .rating.green {
+    background-color: green;
+  }
+  
+  .card span .rating.green:hover {
+    border: 1.5px solid green;
+    background-color: transparent;
+  }
+  
+  .card span .rating.red {
+    background-color: red;
+  }
+  
+  .card span .rating.red:hover {
+    border: 1.5px solid red;
+    background-color: transparent;
+  }
+  
+  .card span .rating.orange {
+    background-color: orange;
+  }
+  
+  .card span .rating.orange:hover {
+    border: 1.5px solid orange;
+    background-color: transparent;
+  }
+  
+  .all-trending {
+    margin-top: 2rem;
+  }
+  
+  .all-trending h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .movie-details {
+    margin-top: 3rem;
+
+     h1 {
+     font-size: 3rem;
+     font-weight: 900;
+   }
+   
+    .genres {
+     margin-top: 1rem;
+   }
+   
+    span {
+     border: 1px solid #fff;
+     border-radius: 5px;
+     padding: 2px 5px;
+     margin-right: 0.5rem;
+     font-size: small;
+   }
+
+   
+}
+  .movie-info {
+    line-height: 1;
+  }
+
+  .production-info {
+    margin-top: 1rem;
+  }
+  
+  .production-card {
+    border: 1px solid #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .production-card h6 {
+    color: $light-blue;
+  }
+  
+  .overview {
+    margin-top: 2rem;
+  }
+  
+  .overview .grid {
+    align-items: unset;
+  }
+  
+  .overview h4 {
+    color: $light-blue;
+  }
+  
+  .description p {
+    margin: 0.5rem 0 1rem;
+    font-size: small;
+    text-align: justify;
+  }
+  
+  .description a {
+    text-decoration: none;
+    color: #fff;
+    background-color: $light-blue;
+    border: 1px solid $light-blue;
+    cursor: pointer;
+    font-size: small;
+    padding: 10px;
+  }
+  
+  .description a:hover {
+    color: $light-blue;
+    background: transparent;
+  }
+  
+  .trailer {
+    color: $light-blue;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .trailer h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .movie-details-reviews a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .movie-details-review {
+    background-color: $light-blue;
+    margin: 0.5rem 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .movie-details-review .author {
+    height: 5rem;
+    width: 5rem;
+    background: #000;
+    cursor: pointer;
+  }
+  
+  .movie-details-review .author {
+    font-size: xx-small;
+  }
+  
+  .movie-details-review .content {
+    margin-left: 1rem;
+  }
+  
+  .movie-details-review .footer {
+    line-height: 1.5;
+    margin-top: 1rem;
+    float: right;
+  }
+  
+  .movie-details-review .footer .username {
+    font-style: italic;
+  }
+  
+  .movie-details-review .footer .date {
+    font-size: xx-small;
+  }
+  
+  .review-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .collection {
+    margin-top: 1rem;
+  }
+  
+  .collection h6 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: $light-blue;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

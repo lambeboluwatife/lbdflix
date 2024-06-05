@@ -1,7 +1,5 @@
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import "./index.css";
-import "./responsive.css";
+import "./components/css/style.css";
 import ScrollAwareNavbar from "./components/ScrollAwareNavbar";
 import Footer from "./components/Footer";
 
