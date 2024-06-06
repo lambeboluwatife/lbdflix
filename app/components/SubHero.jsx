@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const SubHero = ({ movies }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
@@ -15,8 +17,10 @@ const SubHero = ({ movies }) => {
           <div className="grid grid-5">
             {randomMovies.map((movie) => (
               <div className="sub-hero-card-item" key={movie.id}>
-                <img
+                <Image
                   className="sub-hero-card__image"
+                  width={100}
+                  height={100}
                   src={`${IMG_PATH}${movie.backdrop_path}`}
                   alt={`${movie.title} backdrop`}
                 />

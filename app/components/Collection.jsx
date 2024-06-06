@@ -11,7 +11,6 @@ async function fetchCollection(id) {
 
 const Collection = async ({ id }) => {
   const collection = await fetchCollection(id);
-  console.log(collection);
   return (
     <div className="collection">
       <h3>{collection.name}</h3>

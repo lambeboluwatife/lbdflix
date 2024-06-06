@@ -37,19 +37,19 @@ Click on the fork button on the top of the page. This will create a copy of this
 ### Clone the forked repository.
 
 ```bash
- git clone https://github.com/<your-username>/lbdfilx.git
+ git clone https://github.com/<your-username>/lbdflix.git
 ```
 
 or if use the github cli
 
 ```bash
-gh repo clone <your-username>/lbdfilx
+gh repo clone <your-username>/lbdflix
 ```
 
 ### Navigate to the project directory.
 
 ```bash
-cd lbdfilx
+cd lbdflix
 ```
 
 ### Create a new branch (naming convention: type-description-issueNo)

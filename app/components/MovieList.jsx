@@ -1,5 +1,6 @@
 import moment from "moment";
 import Link from "next/link";
+import Image from "next/image";
 
 const MovieList = ({ movies }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -20,7 +21,9 @@ const MovieList = ({ movies }) => {
           <div className="card" key={movie.id}>
             <Link href={`/movies/details/${movie.id}`}>
               {" "}
-              <img
+              <Image
+                width={80}
+                height={220}
                 src={`${IMG_PATH}${movie.poster_path}`}
                 alt={`${movie.title} Poster`}
                 className="card-image"

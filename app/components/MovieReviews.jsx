@@ -1,5 +1,6 @@
 import moment from "moment";
 import Link from "next/link";
+import Image from "next/image";
 
 const MovieReviews = ({ reviews }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -21,8 +22,10 @@ const MovieReviews = ({ reviews }) => {
           <Link href={`/reviews/${review.id}`} key={review.id}>
             <div className="movie-details-review">
               <div className="author">
-                <img
+                <Image
                   className="review-image"
+                  width={100}
+                  height={100}
                   src={showAvatar(review.author_details.avatar_path)}
                   alt={`${
                     review.author_details.username ||

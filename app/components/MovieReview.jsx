@@ -10,7 +10,6 @@ async function fetchReview(id) {
 
 const MovieReview = async ({ id }) => {
   const review = await fetchReview(id);
-  console.log(review);
   return <div>Movie Review</div>;
 };
 
