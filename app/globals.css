@@ -20,12 +20,49 @@ header {
   align-items: center;
 }
 
-header a {
+footer {
+  padding: 20px 40px;
+  margin-top: 30px;
+  border-top: 1.5px solid rgb(86, 86, 86);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a h3 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+footer h3 {
+  text-align: center;
+}
+
+footer .github_link {
+  margin-top: 30px;
+}
+
+footer .github_link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer .links_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a,
+footer #home_link {
   text-decoration: none;
   color: #fff;
 }
 
-header h1 {
+header h1,
+footer #home_link h2 {
   font-size: 1.5rem;
 }
 
@@ -377,9 +414,17 @@ header form {
   filter: grayscale(0);
 }
 
+
 .panel.active h3,
 .panel.active h5,
 .panel.active h6 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

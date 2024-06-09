@@ -3,6 +3,7 @@ import "./globals.css";
 import "./index.css";
 import "./responsive.css";
 import ScrollAwareNavbar from "./components/ScrollAwareNavbar";
+import Footer from "./components/Footer";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <ScrollAwareNavbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
