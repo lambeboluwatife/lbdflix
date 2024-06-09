@@ -149,12 +149,14 @@ header form {
 }
 
 .trending,
-.theatres {
+.theatres,
+.upcoming-movies {
   margin-top: 2rem;
 }
 
 .trending h1,
-.theatres h1 {
+.theatres h1,
+.upcoming-movies h1 {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
@@ -365,20 +367,59 @@ header form {
   margin-bottom: 0.5rem;
 }
 
-.loader {
+.expanding-cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  width: 90vw;
 }
 
-.spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #0070f3;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  filter: grayscale(0.7);
+}
+
+.panel h3,
+.panel h5,
+.panel h6 {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel h3 {
+  font-size: 24px;
+}
+
+.panel h5 {
+  bottom: 80px;
+}
+
+.panel h6 {
+  bottom: 20px;
+}
+
+.panel.active {
+  flex: 5;
+  filter: grayscale(0);
+}
+
+
+.panel.active h3,
+.panel.active h5,
+.panel.active h6 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
 
 @keyframes spin {
@@ -386,3 +427,4 @@ header form {
     transform: rotate(360deg);
   }
 }
+

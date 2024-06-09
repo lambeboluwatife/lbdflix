@@ -18,14 +18,14 @@ const InTheatres = async () => {
   const moviesResponse = movies.results;
 
   return (
-    <div>
+    <>
       <div className="container">
         <div className="all-trending">
           <h1>Movies Out In Theatres</h1>
           <MovieList movies={moviesResponse} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
