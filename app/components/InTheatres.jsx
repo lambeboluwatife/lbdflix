@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MovieList from "./MovieList";
 import Button from "./Button";
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchTrendingMovies() {
   const response = await fetch(

@@ -2,8 +2,9 @@ import Hero from "./components/Hero";
 import InTheatres from "./components/InTheatres";
 import SubHero from "./components/SubHero";
 import Trending from "./components/Trending";
+import UpcomingMoviesWithQueryClient from "./components/UpcomingMovies";
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchMovies() {
   const response = await fetch(
@@ -26,6 +27,7 @@ const HomePage = async () => {
       <SubHero movies={movies} />
       <Trending />
       <InTheatres />
+      <UpcomingMoviesWithQueryClient />
     </div>
   );
 };
