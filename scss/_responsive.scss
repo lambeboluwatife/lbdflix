@@ -76,34 +76,39 @@
       grid-template-columns: repeat(3, 1fr);
     }
   
+    // Example of nesting in sass
     .production-card {
       padding: 15px;
+
+      h6 {
+        font-size: 0.5rem;
+      }
+    
+      h2 {
+        font-size: 0.5rem;
+      }
     }
   
-    .production-card h6 {
-      font-size: 0.5rem;
-    }
   
-    .production-card h2 {
-      font-size: 0.5rem;
-    }
-  
+    // OVERVIEW
     .overview {
       margin-top: 1rem;
+
+      .grid {
+        align-items: center;
+      }
+    
+      .description {
+        width: 100vw;
+        padding: 20px;
+      }
+    
+      .reviews {
+        padding: 20px;
+      }
+
     }
   
-    .overview .grid {
-      align-items: center;
-    }
-  
-    .overview .description {
-      width: 100vw;
-      padding: 20px;
-    }
-  
-    .overview .reviews {
-      padding: 20px;
-    }
   
     .trailer h5 {
       margin-bottom: 0.5rem;
