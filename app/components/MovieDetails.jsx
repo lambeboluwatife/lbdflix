@@ -1,10 +1,10 @@
 "use client";
 import moment from "moment";
-import Hero from "./Hero";
-import MovieReviews from "./MovieReviews";
 import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
-import Collection from "./Collection";
+
+
+import { Hero, MovieReviews, Collection } from './index'
 
 const apiKey = process.env.API_KEY;
 

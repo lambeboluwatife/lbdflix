@@ -1,4 +1,4 @@
-import MovieList from "./MovieList";
+import MovieList from "./index";
 const apiKey = process.env.API_KEY;
 
 async function fetchCollection(id) {
