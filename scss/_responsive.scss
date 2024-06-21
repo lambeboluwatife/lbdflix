@@ -1,0 +1,145 @@
+/* Tablets and under */
+@media all and (max-width: 768px) {
+    .sub-hero-cards .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .sub-hero-card-item:nth-last-child(-n + 2) {
+      display: none;
+    }
+  
+    .trending h1,
+    .theatres h1 {
+      font-size: 1.5rem;
+    }
+  
+    .trending .grid,
+    .theatres .grid,
+    .collection .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .all-trending .grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .production-card h2 {
+      font-size: 1rem;
+    }
+  
+    .overview .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .collection h6 {
+      margin: 0.5rem 0;
+      text-align: justify;
+    }
+  }
+  
+  /* Mobile */
+  @media all and (max-width: 500px) {
+    header {
+      padding: 15px 0;
+      align-items: start;
+    }
+  
+    .sub-hero-cards {
+      display: none;
+    }
+  
+    .showcase h1 {
+      font-size: 2.5rem;
+    }
+  
+    .trending h1,
+    .theatres h1 {
+      font-size: 1rem;
+    }
+  
+    .trending .grid,
+    .theatres .grid,
+    .collection .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .all-trending .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .movie-info h1 {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+  
+    .production-info .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    // Example of nesting in sass
+    .production-card {
+      padding: 15px;
+
+      h6 {
+        font-size: 0.5rem;
+      }
+    
+      h2 {
+        font-size: 0.5rem;
+      }
+    }
+  
+  
+    // OVERVIEW
+    .overview {
+      margin-top: 1rem;
+
+      .grid {
+        align-items: center;
+      }
+    
+      .description {
+        width: 100vw;
+        padding: 20px;
+      }
+    
+      .reviews {
+        padding: 20px;
+      }
+
+    }
+  
+  
+    .trailer h5 {
+      margin-bottom: 0.5rem;
+    }
+  
+    footer .links_wrap {
+      flex-direction: column;
+    }
+  
+    .links_wrap a {
+      margin-bottom: 20px;
+    }
+  
+    footer .github_link {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Mobile */
+  @media all and (max-width: 400px) {}
+  
+  /* Mobile */
+  @media all and (max-width: 320px) {
+  
+    .trending .grid,
+    .theatres .grid,
+    .collection .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .all-trending .grid {
+      grid-template-columns: 1fr;
+    }
+  }
