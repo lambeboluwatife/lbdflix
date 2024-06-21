@@ -1,6 +1,5 @@
 import Link from "next/link";
-import MovieList from "./MovieList";
-import Button from "./Button";
+import { MovieList, Button } from "./index";
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchTrendingMovies() {
