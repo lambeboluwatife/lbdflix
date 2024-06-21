@@ -1,5 +1,4 @@
-import Button from "./Button";
-import MovieList from "./MovieList";
+import { MovieList, Button } from "./index";
 import Link from "next/link";
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
