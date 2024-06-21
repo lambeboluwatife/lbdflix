@@ -108,14 +108,26 @@
   .trailer h5 {
     margin-bottom: 0.5rem;
   }
+
+  footer .links_wrap {
+    flex-direction: column;
+  }
+
+  .links_wrap a {
+    margin-bottom: 20px;
+  }
+
+  footer .github_link {
+    margin-top: 10px;
+  }
 }
 
 /* Mobile */
-@media all and (max-width: 400px) {
-}
+@media all and (max-width: 400px) {}
 
 /* Mobile */
 @media all and (max-width: 320px) {
+
   .trending .grid,
   .theatres .grid,
   .collection .grid {
