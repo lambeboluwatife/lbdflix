@@ -375,6 +375,7 @@ header form {
 .panel.active {
   flex: 5;
   filter: grayscale(0);
+  border: 3px solid #fff;
 }
 
 .panel.active h3,
