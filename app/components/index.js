@@ -1,17 +1,37 @@
 //Basic import and export file
 
-export { default as UpcomingMovies } from './UpcomingMovies';
-export { default as Trending } from './Trending';
-export { default as SubHero } from './SubHero';
-export { default as ScrollAwareNavbar } from './ScrollAwareNavbar';
-export { default as ReactPlayer } from './ReactPlayer';
-export { default as MovieReviews } from './MovieReviews';
-export { default as MovieReview } from './MovieReview';
-export { default as MovieList } from './MovieList';
-export { default as MovieDetails } from './MovieDetails';
-export { default as InTheatres } from './InTheatres';
-export { default as Hero } from './Hero';
-export { default as Header } from './Header';
-export { default as Footer } from './Footer';
-export { default as Collection } from './Collection';
-export { default as Button } from './Button';
+// index.js
+
+import UpcomingMovies from './UpcomingMovies';
+import Trending from './Trending';
+import SubHero from './SubHero';
+import ScrollAwareNavbar from './ScrollAwareNavbar';
+import ReactPlayer from './ReactPlayer';
+import MovieReviews from './MovieReviews';
+import MovieReview from './MovieReview';
+import MovieList from './MovieList';
+import MovieDetails from './MovieDetails';
+import InTheatres from './InTheatres';
+import Hero from './Hero';
+import Header from './Header';
+import Footer from './Footer';
+import Collection from './Collection';
+import Button from './Button';
+
+export {
+    UpcomingMovies,
+    Trending,
+    SubHero,
+    ScrollAwareNavbar,
+    ReactPlayer,
+    MovieReviews,
+    MovieReview,
+    MovieList,
+    MovieDetails,
+    InTheatres,
+    Hero,
+    Header,
+    Footer,
+    Collection,
+    Button
+};
