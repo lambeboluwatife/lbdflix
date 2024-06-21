@@ -318,25 +318,113 @@ header form {
   color: #fff;
 }
 
+// MOVIE-DETAILS REVIEW
 .movie-details-review {
-  background-color: #0070f3;
+  background-color: $light-blue;
   margin: 0.5rem 0;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+
+  .author {
+    height: 5rem;
+    width: 5rem;
+    background: #000;
+    cursor: pointer;
+    font-size: xx-small;
+  }
+  
+  .content {
+    margin-left: 1rem;
+  }
+  
+  .footer {
+    line-height: 1.5;
+    margin-top: 1rem;
+    float: right;
+  }
+  
+  .footer .username {
+    font-style: italic;
+  }
+  
+  .footer .date {
+    font-size: xx-small;
+  }
 }
 
-.movie-details-review .author {
-  height: 5rem;
-  width: 5rem;
-  background: #000;
+.review-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.collection {
+  margin-top: 1rem;
+}
+
+.collection h6 {
+  margin-bottom: 0.5rem;
+}
+
+.expanding-cards {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
   cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  filter: grayscale(0.7);
 }
 
-.movie-details-review .author {
-  font-size: xx-small;
+.panel h3,
+.panel h5,
+.panel h6 {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
 }
 
-.movie-details-review .content {
-  margin-left: 1rem;
+.panel h3 {
+  font-size: 24px;
 }
+
+.panel h5 {
+  bottom: 80px;
+}
+
+.panel h6 {
+  bottom: 20px;
+}
+
+.panel.active {
+  flex: 5;
+  filter: grayscale(0);
+}
+
+
+.panel.active h3,
+.panel.active h5,
+.panel.active h6 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
