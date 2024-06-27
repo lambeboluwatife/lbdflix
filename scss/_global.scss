@@ -424,7 +424,6 @@ header form {
 
 .search-form {
   max-width: 28rem;
-
 }
 
 .search-input-container {
@@ -451,7 +450,7 @@ header form {
   color: #1f2937;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f3f4f6;
+  background-color: transparent;
   outline: none;
 }
 
@@ -470,7 +469,6 @@ header form {
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
-  
 }
 
 .search-button:hover,
@@ -479,8 +477,44 @@ header form {
   transition: ease-in;
 }
 
+.github_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-icon {
+    display: none;
+  }
+
+  .search-input {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-button {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 }
