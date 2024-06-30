@@ -33,8 +33,7 @@
 
 <p id="about-lbdflix"></p>
 
-**LBDflix** is an dynamic movie application that gives a variety of movies, movies details, and trailers. It is packed movies collections for every movie lover and it also recommend movies to users. It is an open source project and open to developers, designers, writers, movie enthusiats to collaborate and learn.
-
+**LBDflix** is a dynamic movie application that gives a variety of movies, movies details, and trailers. It is packed with movie collections for every movie lover and it also recommends movies to users. It is an open source project and open to developers, designers, writers, movie enthusiasts to collaborate and learn.
 ### Built With
 
 <p id="built-with"></p>
