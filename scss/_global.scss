@@ -1,5 +1,5 @@
 // No need for root, with sass you can a color one variable name using '$var' and use it throughout your styles.
-  
+
 :root {
   --primary-color: #0070f3;
 }
@@ -73,8 +73,8 @@ header input {
   border-radius: 10px;
   background-color: transparent;
   outline: none;
+  color: #fff;
 }
-
 
 header .search-form {
   max-width: 28rem;
@@ -362,32 +362,32 @@ header .search-button:focus {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+}
 
-  .author {
-    height: 5rem;
-    width: 5rem;
-    background: #000;
-    cursor: pointer;
-    font-size: xx-small;
-  }
-  
-  .content {
-    margin-left: 1rem;
-  }
-  
-  .footer {
-    line-height: 1.5;
-    margin-top: 1rem;
-    float: right;
-  }
-  
-  .footer .username {
-    font-style: italic;
-  }
-  
-  .footer .date {
-    font-size: xx-small;
-  }
+.author {
+  height: 5rem;
+  width: 5rem;
+  background: #000;
+  cursor: pointer;
+  font-size: xx-small;
+}
+
+.content {
+  margin-left: 1rem;
+}
+
+.footer {
+  line-height: 1.5;
+  margin-top: 1rem;
+  float: right;
+}
+
+.footer .username {
+  font-style: italic;
+}
+
+.footer .date {
+  font-size: xx-small;
 }
 
 .review-image {
@@ -476,25 +476,86 @@ header .search-button:focus {
     display: flex;
     flex-direction: column;
   }
-  .search-icon {
+
+  header .search-icon-container {
     display: none;
   }
 
-  .search-input {
+  header input {
+    width: 250px;
     padding: 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 14px;
   }
 
-  .search-button {
-    position: static;
-    transform: none;
-    width: 100%;
+  header .search-button {
+    right: 5px;
+    bottom: 6px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .container {
     display: flex;
     flex-direction: column;
+  }
+
+  .nav {
+    padding: 10px 0;
+  }
+
+  .nav .container {
+    padding: 0 20px;
+  }
+
+  header input {
+    width: 200px;
+    padding: 0.7rem;
+    font-size: 12px;
+  }
+
+  header .search-input::placeholder {
+    font-size: 12px;
+  }
+
+  header .search-button {
+    right: 5px;
+    bottom: 5px;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header input {
+    width: 170px;
+    padding: 0.6rem;
+    font-size: 10px;
+  }
+
+  header .search-input::placeholder {
+    font-size: 10px;
+  }
+
+  header .search-button {
+    right: 5px;
+    bottom: 5px;
+    padding: 0.15rem 0.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header input {
+    width: 150px;
+    padding: 0.5rem;
+    font-size: 8px;
+  }
+
+  header .search-input::placeholder {
+    font-size: 8px;
+  }
+
+  header .search-button {
+    right: 5px;
+    bottom: 3px;
+    font-size: 10px;
   }
 }

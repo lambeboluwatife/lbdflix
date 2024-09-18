@@ -1,6 +1,6 @@
 import MovieList from "../components/MovieList";
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchTrendingMovies() {
   const response = await fetch(
