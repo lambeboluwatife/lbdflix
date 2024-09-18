@@ -7,7 +7,7 @@ const Header = ({ backgroundColor }) => {
   return (
     <div className="nav" style={navbarStyle}>
       <div className="container">
-        <header>
+        <header style={navbarStyle}>
           <Link href="/">
             <h1>LBDFlix</h1>
           </Link>
