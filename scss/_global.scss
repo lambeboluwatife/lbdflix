@@ -5,18 +5,15 @@
 }
 
 .nav {
+  background-color: #000;
   color: #fff;
-  padding: 0;
+  padding: 20px 0;
   position: fixed;
   width: 100%;
   z-index: 4;
 }
 
 header {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,20 +66,60 @@ footer #home_link h2 {
 }
 
 header input {
-  background: transparent;
-  border: 1.5px solid rgb(86, 86, 86);
-  padding: 0.5rem;
-  color: #fff;
+  width: 100%;
+  padding: 1rem 4rem;
+  font-size: 14px;
+  border: 1px solid #ccc;
   border-radius: 10px;
+  background-color: transparent;
+  outline: none;
 }
 
-header form {
-  margin-right: 5rem;
+
+header .search-form {
+  max-width: 28rem;
 }
 
-::placeholder {
-  color: rgb(86, 86, 86);
-  font-size: 0.7rem;
+header .search-input-container {
+  position: relative;
+}
+
+header .search-icon-container {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header .search-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #ffff;
+}
+
+header .search-input::placeholder {
+  font-size: 14px;
+  color: white;
+}
+
+header .search-button {
+  position: absolute;
+  right: 8px;
+  bottom: 9px;
+  background-color: #2563eb;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-size: 12px;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+header .search-button:hover,
+header .search-button:focus {
+  background-color: #1e40af;
+  transition: ease-in;
 }
 
 .hero-section {
@@ -105,7 +142,7 @@ header form {
 .sub-hero {
   margin-top: 2rem;
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   bottom: 5%;
   width: 95vw;
   overflow: hidden;
@@ -422,69 +459,11 @@ header form {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-.search-form {
-  max-width: 28rem;
-}
-
-.search-input-container {
-  position: relative;
-}
-
-.search-icon-container {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.search-icon {
-  width: 1rem;
-  height: 1rem;
-  color: #ffff;
-}
-
-.search-input {
-  width: 100%;
-  padding: 1rem 7rem;
-  font-size: 14px;
-  color: #1f2937;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-}
-
-.search-input::placeholder {
-  font-size: 15px;
-  color: white;
-}
-
-.search-button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background-color: #2563eb;
-  padding: 0.5rem 1rem;
-  color: #ffffff;
-  font-size: 16px;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-}
-
-.search-button:hover,
-.search-button:focus {
-  background-color: #1e40af;
-  transition: ease-in;
-}
-
 .github_link {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 @keyframes spin {
   to {
