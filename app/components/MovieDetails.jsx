@@ -3,10 +3,9 @@ import moment from "moment";
 import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 
+import { Hero, MovieReviews, Collection } from "./index";
 
-import { Hero, MovieReviews, Collection } from './index'
-
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchMovie(id) {
   const response = await fetch(
@@ -44,12 +43,24 @@ const MovieDetails = async ({ id }) => {
     return genres.map((genre) => genre.name);
   }
 
-  function roundToMillions(number) {
-    if (Math.abs(number) >= 1e6) {
-      const roundedMillions = (number / 1e6).toPrecision(3);
+  // function roundToMillions(number) {
+  //   if (Math.abs(number) >= 1e6) {
+  //     const roundedMillions = (number / 1e6).toPrecision(3);
+  //     return roundedMillions + "M";
+  //   } else {
+  //     return number.toPrecision(3);
+  //   }
+  // }
+
+  function roundToMillionsOrBillions(number) {
+    if (Math.abs(number) >= 1e9) {
+      const roundedBillions = (number / 1e9).toFixed(2);
+      return roundedBillions + "B";
+    } else if (Math.abs(number) >= 1e6) {
+      const roundedMillions = (number / 1e6).toFixed(0);
       return roundedMillions + "M";
     } else {
-      return number.toPrecision(3);
+      return number.toLocaleString(undefined, { maximumFractionDigits: 3 });
     }
   }
 
@@ -81,11 +92,11 @@ const MovieDetails = async ({ id }) => {
               </div>
               <div className="production-card">
                 <h6>BUDGET</h6>
-                <h2>${roundToMillions(movie.budget)}</h2>
+                <h2>${roundToMillionsOrBillions(movie.budget)}</h2>
               </div>
               <div className="production-card">
                 <h6>REVENUE</h6>
-                <h2>${roundToMillions(movie.revenue)}</h2>
+                <h2>${roundToMillionsOrBillions(movie.revenue)}</h2>
               </div>
               <div className="production-card">
                 <h6>LENGTH</h6>
