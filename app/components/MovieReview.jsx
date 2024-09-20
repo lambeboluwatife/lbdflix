@@ -1,4 +1,4 @@
-const apiKey = process.env.MOVIE_API;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 async function fetchReview(id) {
   const response = await fetch(
