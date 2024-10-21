@@ -1,0 +1,61 @@
+.movie-review-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.review-container {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.review-container h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.full-movie-review {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.author-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.review-image {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.review-content {
+  line-height: 1.6;
+  color: #e0e0e0;
+  padding: 0 1rem;
+}

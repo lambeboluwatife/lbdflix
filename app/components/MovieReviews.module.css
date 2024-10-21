@@ -1,0 +1,57 @@
+.movieDetailsReviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.reviewLink {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out;
+}
+
+.reviewLink:hover {
+  transform: translateY(-2px);
+}
+
+.movieDetailsReview {
+  display: flex;
+  align-items: flex-start;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.author {
+  margin-right: 1rem;
+}
+
+.reviewImage {
+  border-radius: 50%;
+}
+
+.content {
+  flex: 1;
+}
+
+.reviewContent {
+  margin: 0 0 0.5rem 0;
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.username, .date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}

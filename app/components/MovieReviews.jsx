@@ -1,6 +1,7 @@
 import moment from "moment";
 import Link from "next/link";
 import Image from "next/image";
+import styles from './MovieReviews.module.css';
 
 const MovieReviews = ({ reviews }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -16,45 +17,43 @@ const MovieReviews = ({ reviews }) => {
   const firstFiveReviews = reviews.slice(0, 5);
 
   return (
-    <div>
-      <div className="movie-details-reviews">
-        {firstFiveReviews.map((review) => (
-          <Link href={`/reviews/${review.id}`} key={review.id}>
-            <div className="movie-details-review">
-              <div className="author">
-                <Image
-                  className="review-image"
-                  width={100}
-                  height={100}
-                  src={showAvatar(review.author_details.avatar_path)}
-                  alt={`${
-                    review.author_details.username ||
+    <div className={styles.movieDetailsReviews}>
+      {firstFiveReviews.map((review) => (
+        <Link href={`/reviews/${review.id}`} key={review.id} className={styles.reviewLink}>
+          <div className={styles.movieDetailsReview}>
+            <div className={styles.author}>
+              <Image
+                className={styles.reviewImage}
+                width={50}
+                height={50}
+                src={showAvatar(review.author_details.avatar_path)}
+                alt={`${
+                  review.author_details.username ||
+                  review.author ||
+                  review.author_details.name
+                } avatar`}
+              />
+            </div>
+            <div className={styles.content}>
+              <h6 className={styles.reviewContent}>
+                {review.content.length > 100
+                  ? review.content.substring(0, 100) + "..."
+                  : review.content}
+              </h6>
+              <div className={styles.footer}>
+                <h6 className={styles.username}>
+                  {review.author_details.username ||
                     review.author ||
-                    review.author_details.name
-                  } avatar`}
-                />
-              </div>
-              <div className="content">
-                <h6>
-                  {review.content.length > 100
-                    ? review.content.substring(0, 100) + "..."
-                    : review.content}
+                    review.author_details.name}
                 </h6>
-                <div className="footer">
-                  <h6 className="username">
-                    {review.author_details.username ||
-                      review.author ||
-                      review.author_details.name}
-                  </h6>
-                  <h6 className="date">
-                    {moment(review.created_at).format("MMM D, YY")}
-                  </h6>
-                </div>
+                <h6 className={styles.date}>
+                  {moment(review.created_at).format("MMM D, YY")}
+                </h6>
               </div>
             </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
