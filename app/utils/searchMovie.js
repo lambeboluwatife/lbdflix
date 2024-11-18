@@ -1,4 +1,3 @@
-// utils/searchMovie.js
 export async function searchMovie(searchQuery) {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 

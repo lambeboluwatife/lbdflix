@@ -7,7 +7,7 @@ export const metadata = {
   author: "Lambe Boluwatife",
 };
 
-const MovieDetailsLayout = ({ children, id }) => {
+const MovieDetailsLayout = ({ children }) => {
   return <div>{children}</div>;
 };
 
