@@ -1,13 +1,28 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { useLoginMutation } from "@/redux/slices/usersApiSlice";
+import { setCredentials } from "@/redux/slices/authSlice";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      router.push("/");
+    }
+  }, [router, userInfo]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,8 +30,13 @@ const SignInPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log(formData);
+    try {
+      const res = await login(formData).unwrap();
+      dispatch(setCredentials({ ...res }));
+      router.push("/");
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
   };
 
   return (
