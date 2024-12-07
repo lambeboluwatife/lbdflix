@@ -1,67 +1,70 @@
-@import 'config';
-@import 'global';
-@import 'responsive';
+@import "config";
+@import "global";
+@import "responsive";
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .container {
-    margin: 0 auto;
-    overflow: auto;
-    padding: 0 40px;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .grid-5 {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  
-  .grid-6 {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  
-  .btn {
-    background-color: $light-blue;
-    border: 1px solid $light-blue;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    padding: 10px;
-    font-size: x-small;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-    &:hover {
-        background: transparent;
-        color: $light-blue;
-    }
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+}
 
-  .loader {
+.container {
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.btn {
+  background-color: $light-blue;
+  border: 1px solid $light-blue;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 10px;
+  font-size: x-small;
+
+  &:hover {
+    background: transparent;
+    color: $light-blue;
+  }
+}
+
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,5 +85,3 @@
     transform: rotate(360deg);
   }
 }
-  
-  
