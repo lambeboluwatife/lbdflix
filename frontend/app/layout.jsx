@@ -4,6 +4,8 @@ import "../scss/style.scss";
 import ScrollAwareNavbar from "./components/ScrollAwareNavbar";
 import Footer from "./components/Footer";
 import Providers from "@/redux/Providers";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <Providers>
           <ScrollAwareNavbar />
+          <ToastContainer />
           <main>{children}</main>
           <Footer />
         </Providers>
