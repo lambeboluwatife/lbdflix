@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../scss/style.scss";
 import ScrollAwareNavbar from "./components/ScrollAwareNavbar";
 import Footer from "./components/Footer";
+import Providers from "@/redux/Providers";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ScrollAwareNavbar />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <ScrollAwareNavbar />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
