@@ -1,6 +1,8 @@
 import asyncHandler from "express-async-handler";
 import generateToken from "../utils/generateToken.js";
 import User from "../models/userModel.js";
+import cloudinary from "../config/cloudinaryConfig.js";
+import fs from "fs";
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -30,10 +32,26 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User already exists");
   }
 
+  if (!req.file) {
+    return res.status(400).json({
+      success: false,
+      message: "No file uploaded",
+    });
+  }
+
+  const result = await cloudinary.uploader.upload(req.file.path);
+
+  fs.unlink(req.file.path, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+
   const user = await User.create({
     name,
     email,
     password,
+    profilePicture: result.secure_url,
   });
 
   if (user) {
