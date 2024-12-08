@@ -12,7 +12,6 @@ const SignInPage = () => {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [loading, setLoading] = useState(false);
 
   const [login, { isLoading }] = useLoginMutation();
 
@@ -34,6 +33,7 @@ const SignInPage = () => {
       const res = await login(formData).unwrap();
       dispatch(setCredentials({ ...res }));
       router.push("/");
+      toast.success(res?.data?.message || "Signed In");
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
@@ -66,8 +66,8 @@ const SignInPage = () => {
               required
             />
           </div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Signing in..." : "Sign In"}
+          <button type="submit">
+            {isLoading ? "Signing in..." : "Sign In"}
           </button>
         </form>
         <p>

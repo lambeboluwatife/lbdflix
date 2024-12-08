@@ -16,6 +16,10 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicture: {
+      type: String,
+      required: [true, "Please provide a profile picture"],
+    },
   },
   {
     timestamps: true,

@@ -8,9 +8,11 @@ import {
   updateUserProfile,
 } from "../controllers/userControllers.js";
 
+import upload from "../config/multerConfig.js";
+
 import { protect } from "../middleware/authMiddleware.js";
 
-router.post("/", registerUser);
+router.post("/", upload.single("profilePicture"), registerUser);
 router.post("/auth", authUser);
 router.post("/logout", logoutUser);
 router
