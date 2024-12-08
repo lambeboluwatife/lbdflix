@@ -1,12 +1,27 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { useRegisterMutation } from "@/redux/slices/usersApiSlice";
+import { setCredentials } from "@/redux/slices/authSlice";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
   const [previewImage, setPreviewImage] = useState(null);
+
+  const [register, { isLoading }] = useRegisterMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      router.push("/");
+    }
+  }, [router, userInfo]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -32,8 +47,29 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log(formData);
+
+    if (formData.password !== formData.verifyPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("username", formData.username);
+      data.append("email", formData.email);
+      data.append("password", formData.password);
+      if (formData.profilePicture) {
+        data.append("profilePicture", formData.profilePicture);
+      }
+
+      const res = await register(data).unwrap();
+      dispatch(setCredentials({ ...res }));
+      router.push("/");
+      toast.success("Signed Up");
+    } catch (err) {
+      toast.error(err?.data?.message || err.message);
+    }
   };
 
   return (
@@ -115,8 +151,8 @@ const SignUpPage = () => {
               />
             </div>
           )}
-          <button type="submit" disabled={loading}>
-            {loading ? "Creating Account..." : "Sign Up"}
+          <button type="submit">
+            {isLoading ? "Creating Account..." : "Sign Up"}
           </button>
         </form>
         <p>
