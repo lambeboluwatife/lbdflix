@@ -67,7 +67,7 @@ const SignInPage = () => {
             />
           </div>
           <button type="submit">
-            {isLoading ? "Signing in..." : "Sign In"}
+            {isLoading ? "signing in..." : "Sign In"}
           </button>
         </form>
         <p>

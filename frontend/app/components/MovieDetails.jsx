@@ -43,15 +43,6 @@ const MovieDetails = async ({ id }) => {
     return genres.map((genre) => genre.name);
   }
 
-  // function roundToMillions(number) {
-  //   if (Math.abs(number) >= 1e6) {
-  //     const roundedMillions = (number / 1e6).toPrecision(3);
-  //     return roundedMillions + "M";
-  //   } else {
-  //     return number.toPrecision(3);
-  //   }
-  // }
-
   function roundToMillionsOrBillions(number) {
     if (Math.abs(number) >= 1e9) {
       const roundedBillions = (number / 1e9).toFixed(2);
