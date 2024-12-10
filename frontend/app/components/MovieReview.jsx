@@ -1,8 +1,8 @@
-'use client'
-import { useState, useEffect } from 'react';
-import moment from 'moment';
-import Image from 'next/image';
-import styles from '../reviews/[id]/page.module.css';
+"use client";
+import { useState, useEffect } from "react";
+import moment from "moment";
+import Image from "next/image";
+import styles from "../reviews/[id]/page.module.css";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -20,7 +20,7 @@ const MovieReview = ({ id }) => {
           `https://api.themoviedb.org/3/review/${id}?api_key=${apiKey}`
         );
         if (!response.ok) {
-          throw new Error('Failed to fetch review');
+          throw new Error("Failed to fetch review");
         }
         const data = await response.json();
         setReview(data);
@@ -47,21 +47,21 @@ const MovieReview = ({ id }) => {
   if (!review) return <div>No review found</div>;
 
   return (
-    <div className={styles['full-movie-review']}>
-      <div className={styles['author-info']}>
+    <div className={styles["full-movie-review"]}>
+      <div className={styles["author-info"]}>
         <Image
-          className={styles['review-image']}
+          className={styles["review-image"]}
           width={40}
           height={40}
           src={showAvatar(review.author_details.avatar_path)}
           alt={`${review.author_details.username || review.author} avatar`}
         />
-        <div className={styles['author-details']}>
+        <div className={styles["author-details"]}>
           <h3>{review.author_details.username || review.author}</h3>
           <p>{moment(review.created_at).format("MMMM D, YYYY")}</p>
         </div>
       </div>
-      <div className={styles['review-content']}>
+      <div className={styles["review-content"]}>
         <p>{review.content}</p>
       </div>
     </div>

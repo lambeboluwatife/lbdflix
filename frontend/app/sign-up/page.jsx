@@ -152,7 +152,7 @@ const SignUpPage = () => {
             </div>
           )}
           <button type="submit">
-            {isLoading ? "Creating Account..." : "Sign Up"}
+            {isLoading ? "creating account..." : "Sign Up"}
           </button>
         </form>
         <p>

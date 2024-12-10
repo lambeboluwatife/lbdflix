@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
 import SearchMovie from "./SearchMovie";
+import { use } from "react";
 
 const Header = ({ backgroundColor }) => {
+  const { userInfo } = useSelector((state) => state.auth);
   const navbarStyle = {
     backgroundColor: backgroundColor,
   };
@@ -14,6 +17,29 @@ const Header = ({ backgroundColor }) => {
             <h1>LBDFlix</h1>
           </Link>
           <SearchMovie />
+          <div className="header-links">
+            {userInfo ? (
+              <>
+                <div className="user-info">
+                  <img
+                    src={userInfo.avatar}
+                    alt="User Avatar"
+                    className="user-avatar"
+                  />
+                  <span className="user-name">{userInfo.username}</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link href="/sign-in">
+                  <h4>Sign In</h4>
+                </Link>
+                <Link href="/sign-up">
+                  <h4>Sign Up</h4>
+                </Link>
+              </>
+            )}
+          </div>
         </header>
       </div>
     </div>

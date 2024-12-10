@@ -1,4 +1,4 @@
-import MovieReview from "@/frontend/app/components/MovieReview";
+import { MovieReview } from "@/app/components";
 import styles from "./page.module.css";
 
 const MovieReviewPage = ({ params: { id } }) => {
