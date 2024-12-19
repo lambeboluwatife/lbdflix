@@ -1,5 +1,3 @@
-// No need for root, with sass you can a color one variable name using '$var' and use it throughout your styles.
-
 :root {
   --primary-color: #0070f3;
 }
@@ -278,10 +276,49 @@ header .search-button:focus {
   margin-bottom: 1rem;
 }
 
-.card img {
+.card {
+  position: relative;
   width: 80%;
-  border-radius: 10px;
   cursor: pointer;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+  opacity: 0.7;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay .like-button,
+.overlay .favorite-button {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  color: #fff;
+}
+
+.card:hover .overlay {
+  opacity: 1;
 }
 
 .card h5 {
@@ -330,6 +367,10 @@ header .search-button:focus {
 .card span .rating.orange:hover {
   border: 1.5px solid orange;
   background-color: transparent;
+}
+
+.card:hover .like-buttons {
+  opacity: 1;
 }
 
 .all-trending {

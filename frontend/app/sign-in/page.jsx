@@ -35,7 +35,8 @@ const SignInPage = () => {
       router.push("/");
       toast.success(res?.data?.message || "Signed In");
     } catch (err) {
-      toast.error(err?.data?.message || err.error);
+      toast.error(err?.data?.message || err.error || "An error occurred");
+      console.log(err);
     }
   };
 
