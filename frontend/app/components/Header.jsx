@@ -19,14 +19,16 @@ const Header = ({ backgroundColor }) => {
           <div className="header-links">
             {userInfo ? (
               <>
-                <div className="user-info">
-                  <img
-                    src={userInfo.avatar}
-                    alt="User Avatar"
-                    className="user-avatar"
-                  />
-                  <span className="user-name">{userInfo.username}</span>
-                </div>
+                <Link href="/dashboard">
+                  <div className="user-info">
+                    <img
+                      src={userInfo.avatar}
+                      alt="User Avatar"
+                      className="user-avatar"
+                    />
+                    <span className="user-name">{userInfo.username}</span>
+                  </div>
+                </Link>
               </>
             ) : (
               <>

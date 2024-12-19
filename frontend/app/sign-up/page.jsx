@@ -65,7 +65,7 @@ const SignUpPage = () => {
 
       const res = await register(data).unwrap();
       dispatch(setCredentials({ ...res }));
-      router.push("/");
+      router.push("/dashboard");
       toast.success("Signed Up");
     } catch (err) {
       toast.error(err?.data?.message || err.message);
