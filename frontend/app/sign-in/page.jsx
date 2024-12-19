@@ -32,7 +32,7 @@ const SignInPage = () => {
     try {
       const res = await login(formData).unwrap();
       dispatch(setCredentials({ ...res }));
-      router.push("/");
+      router.push("/dashboard");
       toast.success(res?.data?.message || "Signed In");
     } catch (err) {
       toast.error(err?.data?.message || err.error || "An error occurred");
