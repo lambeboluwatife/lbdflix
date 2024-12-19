@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import SearchMovie from "./SearchMovie";
-import { use } from "react";
 
 const Header = ({ backgroundColor }) => {
   const { userInfo } = useSelector((state) => state.auth);

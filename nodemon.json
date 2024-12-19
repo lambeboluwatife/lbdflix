@@ -1,0 +1,6 @@
+{
+  "watch": ["backend/"],
+  "ignore": ["frontend/.next", "node_modules", "frontend/out"],
+  "ext": "js,json",
+  "exec": "node backend/server.js"
+}

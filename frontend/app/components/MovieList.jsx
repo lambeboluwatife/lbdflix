@@ -1,6 +1,8 @@
 import moment from "moment";
 import Link from "next/link";
 import Image from "next/image";
+import { BiLike, BiSolidLike } from "react-icons/bi";
+import { GrFavorite } from "react-icons/gr";
 
 const MovieList = ({ movies }) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -28,6 +30,10 @@ const MovieList = ({ movies }) => {
                 alt={`${movie.title} Poster`}
                 className="card-image"
               />
+              <div className="overlay">
+                <BiLike className="like-button" />
+                <GrFavorite className="favorite-button" />
+              </div>
             </Link>
             <h5>
               {" "}
