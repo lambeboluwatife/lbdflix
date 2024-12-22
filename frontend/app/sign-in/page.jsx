@@ -19,7 +19,7 @@ const SignInPage = () => {
 
   useEffect(() => {
     if (userInfo) {
-      router.push("/");
+      router.push("/dashboard");
     }
   }, [router, userInfo]);
 
