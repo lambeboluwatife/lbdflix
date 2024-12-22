@@ -19,7 +19,7 @@ const SignUpPage = () => {
 
   useEffect(() => {
     if (userInfo) {
-      router.push("/");
+      router.push("/dashboard");
     }
   }, [router, userInfo]);
 

@@ -1,8 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import "./Dashboard.css";
 
 const Dashboard = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem("userInfo");
+
+    if (!userInfo) {
+      router.push("/sign-in");
+    }
+  }, [router]);
+
   const [likedMovies] = useState([
     {
       id: 1,

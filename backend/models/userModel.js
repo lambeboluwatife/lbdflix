@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcryptjs";
 
 const userSchema = mongoose.Schema(
@@ -24,6 +24,26 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please provide a profile picture"],
     },
+    liked_movies: [
+      {
+        movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
+        title: { type: String, required: true },
+        rating: { type: Number, required: true },
+        release_date: { type: String, required: true },
+        poster_path: { type: String, required: true },
+        total_likes: { type: Number, default: 0 },
+      },
+    ],
+    favorite_movies: [
+      {
+        movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
+        title: { type: String, required: true },
+        rating: { type: Number, required: true },
+        release_date: { type: String, required: true },
+        poster_path: { type: String, required: true },
+        total_likes: { type: Number, default: 0 },
+      },
+    ],
   },
   {
     timestamps: true,

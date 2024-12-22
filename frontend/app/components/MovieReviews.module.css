@@ -50,7 +50,8 @@
   margin-top: 0.5rem;
 }
 
-.username, .date {
+.username,
+.date {
   margin: 0;
   font-size: 0.8rem;
   color: #b0b0b0;
