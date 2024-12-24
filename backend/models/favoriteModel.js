@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const likeSchema = mongoose.Schema(
+const favoriteSchema = mongoose.Schema(
   {
     movieDetails: [
       {
@@ -27,6 +27,6 @@ const likeSchema = mongoose.Schema(
   }
 );
 
-const Like = mongoose.model("Like", likeSchema);
+const Favorite = mongoose.model("Favorite", favoriteSchema);
 
-export default Like;
+export default Favorite;
