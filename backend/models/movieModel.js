@@ -1,14 +1,19 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const movieSchema = new mongoose.Schema({
-  movieId: { type: String },
+  tmdbId: { type: String, required: true, unique: true },
   title: { type: String, required: true },
   rating: { type: Number, required: true },
   release_date: { type: String, required: true },
   poster_path: { type: String, required: true },
-  total_likes: { type: Number, default: 0 },
+  likes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Like",
+    },
+  ],
 });
 
-module.exports = mongoose.model("Movie", movieSchema);
+const Movie = mongoose.model("Movie", movieSchema);
 
 export default Movie;
