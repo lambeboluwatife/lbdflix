@@ -3,6 +3,7 @@ import generateToken from "../utils/generateToken.js";
 import User from "../models/userModel.js";
 import cloudinary from "../config/cloudinaryConfig.js";
 import fs from "fs";
+import e from "express";
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -82,12 +83,22 @@ const logoutUser = asyncHandler(async (req, res) => {
 });
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = {
-    _id: req.user._id,
-    name: req.user.name,
-    email: req.user.email,
-  };
-  res.status(200).json(user);
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    res.status(200).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      username: user.username,
+      avatar: user.profilePicture,
+      liked_movies: user.liked_movies,
+      favorite_movies: user.favorite_movies,
+    });
+  } else {
+    res.status(404);
+    throw new Error("User not found");
+  }
 });
 
 const updateUserProfile = asyncHandler(async (req, res) => {
