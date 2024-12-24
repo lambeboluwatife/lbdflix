@@ -27,21 +27,27 @@ const userSchema = mongoose.Schema(
     liked_movies: [
       {
         movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
+        tmdbId: { type: String, required: true },
         title: { type: String, required: true },
         rating: { type: Number, required: true },
         release_date: { type: String, required: true },
         poster_path: { type: String, required: true },
-        total_likes: { type: Number, default: 0 },
       },
     ],
     favorite_movies: [
       {
         movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
+        tmdbId: { type: String, required: true },
         title: { type: String, required: true },
         rating: { type: Number, required: true },
         release_date: { type: String, required: true },
         poster_path: { type: String, required: true },
-        total_likes: { type: Number, default: 0 },
+        likes: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: "Like",
+          },
+        ],
       },
     ],
   },
