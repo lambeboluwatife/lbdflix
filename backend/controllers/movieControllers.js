@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import Movie from "../models/movieModel.js";
 import User from "../models/userModel.js";
 import Like from "../models/likeModel.js";
+import Favorite from "../models/favoriteModel.js";
 
 const likeMovie = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
@@ -71,9 +72,76 @@ const likeMovie = asyncHandler(async (req, res) => {
       res.status(200).json({ message: "Movie unliked" });
     }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "An error occurred" });
+    res.status(500);
+    throw new Error("An error occurred");
   }
 });
 
-export { likeMovie };
+const favoriteMovie = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+  const { tmdbId, title, rating, release_date, poster_path } = req.body;
+
+  try {
+    let movie = await Movie.findOne({ tmdbId });
+
+    if (!movie) {
+      movie = await Movie.create({
+        tmdbId,
+        title,
+        rating,
+        release_date,
+        poster_path,
+      });
+    }
+
+    const favorite = await Favorite.findOne({
+      "user.id": user._id,
+      "movieDetails.tmdbId": tmdbId,
+    });
+
+    if (!favorite) {
+      const newFavorite = await Favorite.create({
+        movieDetails: {
+          tmdbId,
+          title,
+          rating,
+          release_date,
+          poster_path,
+        },
+        user: {
+          id: user._id,
+          username: user.username,
+          email: user.email,
+          name: user.name,
+        },
+      });
+
+      user.favorite_movies.push({
+        id: newFavorite._id,
+        movieId: movie._id,
+        tmdbId,
+        title,
+        rating,
+        release_date,
+        poster_path,
+      });
+      await user.save();
+
+      res.status(201).json({ message: "Movie added to favorite" });
+    } else {
+      await Favorite.findByIdAndDelete(favorite._id);
+
+      await User.updateOne(
+        { _id: user._id },
+        { $pull: { favorite_movies: { tmdbId } } }
+      );
+
+      res.status(200).json({ message: "Movie removed from favorite" });
+    }
+  } catch (error) {
+    res.status(500);
+    throw new Error("An error occurred");
+  }
+});
+
+export { likeMovie, favoriteMovie };

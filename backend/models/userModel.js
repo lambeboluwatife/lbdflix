@@ -42,12 +42,6 @@ const userSchema = mongoose.Schema(
         rating: { type: Number, required: true },
         release_date: { type: String, required: true },
         poster_path: { type: String, required: true },
-        likes: [
-          {
-            type: Schema.Types.ObjectId,
-            ref: "Like",
-          },
-        ],
       },
     ],
   },
