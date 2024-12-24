@@ -63,8 +63,10 @@ const likeMovie = asyncHandler(async (req, res) => {
       movie.likes.pull(like._id);
       await movie.save();
 
-      user.liked_movies.pull(like._id);
-      await user.save();
+      await User.updateOne(
+        { _id: user._id },
+        { $pull: { liked_movies: { tmdbId } } }
+      );
 
       res.status(200).json({ message: "Movie unliked" });
     }
