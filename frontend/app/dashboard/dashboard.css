@@ -1,8 +1,60 @@
-.dashboard {
-  /* padding: 40px 20px 20px 20px; */
-  background-color: #181818;
+.column {
+  float: left;
+}
+
+.left {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background-color: #2a2d3e;
+}
+
+.right {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+  background-color: #fff;
+}
+
+.user-profile {
+  background-color: #212330;
+}
+
+.user-profile .user-info {
+  padding: 20px;
   color: #fff;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  margin-top: 2rem;
+}
+
+.dashboard-main {
+  padding: 20px;
+}
+
+.dashboard-main h4 {
+  color: #393c4d;
+}
+
+.dashboard-main .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 0;
+}
+
+.dashboard-main a {
+  text-decoration: none;
+  color: #393c4d;
+}
+
+.dashboard-main .nav-item {
+  color: #505362;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.dashboard-main .nav-item:hover {
+  background-color: #383b4e;
+  color: #a7a8ba;
 }
