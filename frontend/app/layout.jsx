@@ -1,3 +1,4 @@
+"use client";
 import { Poppins } from "next/font/google";
 import "../scss/style.scss";
 import ScrollAwareNavbar from "./components/ScrollAwareNavbar";
@@ -5,30 +6,28 @@ import Footer from "./components/Footer";
 import Providers from "@/redux/Providers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "./components/Head";
+import { usePathname } from "next/navigation";
 
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "LBDFlix",
-  description:
-    "LBDflix is an dynamic movie application that gives a variety of movies, movies details, and trailers. It is packed movies collections for every movie lover and it also recommend movies to users.",
-  keywords:
-    "avatar, action, comedy, drama, mystery, horror, romance, movies, movie, trailer, rebel moon, zack synder, watch, stream, download, reviews, cast, US, free",
-  author: "Lambe Boluwatife",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+
+  const excludePaths = ["/sign-in", "/sign-up", "/dashboard"];
+  const shouldExclude = excludePaths.includes(pathname);
   return (
     <html lang="en">
+      <Head />
       <body className={poppins.className}>
         <Providers>
-          <ScrollAwareNavbar />
+          {!shouldExclude && <ScrollAwareNavbar />}
           <ToastContainer />
           <main>{children}</main>
-          <Footer />
+          {!shouldExclude && <Footer />}
         </Providers>
       </body>
     </html>

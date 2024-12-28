@@ -1,13 +1,25 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import SearchMovie from "./SearchMovie";
+import UserProfile from "./UserProfile";
+import { hydrateUserInfo } from "@/redux/slices/authSlice";
 
 const Header = ({ backgroundColor }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(hydrateUserInfo());
+    setIsLoading(false);
+  }, [dispatch]);
+
   const navbarStyle = {
     backgroundColor: backgroundColor,
   };
+
   return (
     <div className="nav" style={navbarStyle}>
       <div className="container">
@@ -17,17 +29,12 @@ const Header = ({ backgroundColor }) => {
           </Link>
           <SearchMovie />
           <div className="header-links">
-            {userInfo ? (
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : userInfo ? (
               <>
                 <Link href="/dashboard">
-                  <div className="user-info">
-                    <img
-                      src={userInfo.avatar}
-                      alt="User Avatar"
-                      className="user-avatar"
-                    />
-                    <span className="user-name">{userInfo.username}</span>
-                  </div>
+                  <UserProfile />
                 </Link>
               </>
             ) : (

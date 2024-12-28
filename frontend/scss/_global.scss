@@ -42,7 +42,7 @@ header {
   transition: background-color 0.3s ease-in-out;
 }
 
-.user-info:hover {
+.header-links .user-info:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 0.5rem;
@@ -665,6 +665,50 @@ p a {
 
 p a:hover {
   text-decoration: underline;
+}
+
+.skeleton-loader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f4f4f4 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 10px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f4f4f4 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  width: 80%;
+}
+
+.skeleton-line.short {
+  width: 50%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @keyframes spin {
