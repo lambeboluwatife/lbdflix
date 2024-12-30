@@ -14,6 +14,10 @@
   height: 100vh;
   margin-left: 20%;
   background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  overflow: hidden;
 }
 
 .user-profile {
@@ -50,11 +54,20 @@
   padding: 10px;
   text-align: left;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   width: 100%;
 }
 
 .dashboard-main .nav-item:hover {
   background-color: #383b4e;
   color: #a7a8ba;
+}
+
+.dashboard-main .nav-item.active {
+  background-color: #ff5722;
+  color: #ffffff;
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
