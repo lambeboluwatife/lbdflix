@@ -345,11 +345,13 @@ header form {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
 @media all and (max-width: 768px) {
   .sub-hero-cards .grid {
     grid-template-columns: repeat(3, 1fr);
