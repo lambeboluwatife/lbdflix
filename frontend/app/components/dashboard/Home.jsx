@@ -24,7 +24,7 @@ const DashboardHome = () => {
   return (
     <div className="dashboard-home">
       <h1>{timeOfDay}</h1>
-      <h6>{userInfo.username}</h6>
+      <h6>{userInfo?.username}</h6>
     </div>
   );
 };
